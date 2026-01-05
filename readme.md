@@ -3,7 +3,35 @@
 This project is a Note Taking REST API built using FastAPI.
 It allows users to securely create, manage, and organize personal notes using tags, with JWT-based authentication ensuring that only note owners can modify or delete their notes.
 
+# Quick Run
 
+1. **Clone the repository**  
+```bash
+git clone <repo-url>
+cd <repo-folder>
+```
+
+2) **Create a .env file in the project root with the following variables:**
+```bash
+ACCESS_TOKEN_EXPIRE_MINUTES=60
+SECRET_KEY=replace_this_with_a_strong_secret
+DATABASE_URL=sqlite:///./notes.db  # or your own database URL
+```
+
+3) **Build the Docker image**
+```bash
+docker build -t your_image_name .
+```
+
+5) **Run the Docker container**
+```bash
+docker run --env-file .env -p 8000:8000 your_image_name
+```
+
+7) **Open the application in your browser:**
+```bash
+http://localhost:8000
+```
 
 ## 🛠️ Tech Stack
 
@@ -102,20 +130,6 @@ Relationships
 User → Notes: One-to-Many
 
 Notes ↔ Tags: Many-to-Many via association table
-
-## 🚀 Local Setup Instructions
-
-1️⃣ Clone the Repository
-git clone <repository-url>
-cd Task
-
-2️⃣ Create Virtual Environment
-python -m venv venv
-source venv/bin/activate   # Linux / Mac
-venv\Scripts\activate      # Windows
-
-3️⃣ Install Dependencies
-pip install -r requirements.txt
 
 ## 🗄️ Database Setup
 
