@@ -1,12 +1,11 @@
-##📝 Note Taking API – FastAPI Backend Assignment
-Overview
-
+# 📝 Note Taking API – FastAPI Backend Assignment
+## Overview
 This project is a Note Taking REST API built using FastAPI.
 It allows users to securely create, manage, and organize personal notes using tags, with JWT-based authentication ensuring that only note owners can modify or delete their notes.
 
 
 
-##🛠️ Tech Stack
+## 🛠️ Tech Stack
 
 Language: Python 3.9+
 
@@ -24,7 +23,7 @@ API Documentation: Swagger / OpenAPI
 
 Containerization: Docker
 
-##📦 Features
+## 📦 Features
 ✅ Authentication
 
 User registration
@@ -55,53 +54,56 @@ Tags are reusable across notes
 
 Many-to-many relationship between notes and tags
 
-##🗂️ Project Structure
-Task/
-├── app/
-│   ├── main.py
-│   ├── database.py
-│   ├── models.py
-│   ├── schemas.py
-│   ├── crud.py
-│   ├── deps.py
-│   ├── auth.py
-│   └── routes/
-│       ├── auth.py
-│       └── notes.py
-├── notes.db
-├── .env
-├── Dockerfile
-├── requirements.txt
-└── README.md
+## 🧩 Database Design
 
-##🧩 Database Design
 User
-Field	Type
+
+
+Field     Type
+
 id	Integer (Primary Key)
+
 username	String (Unique)
+
 email	String (Unique)
+
 hashed_password	String
 
+
 Note
+
+
 Field	Type
+
 id	Integer (Primary Key)
+
 title	String
+
 content	Text
+
 owner_id	Foreign Key (User)
+
 created_at	Timestamp
+
 updated_at	Timestamp
 
+
 Tag
+
+
 Field	Type
+
 id	Integer (Primary Key)
+
 name	String (Unique)
+
 Relationships
 
 User → Notes: One-to-Many
 
 Notes ↔ Tags: Many-to-Many via association table
 
-##🚀 Local Setup Instructions
+## 🚀 Local Setup Instructions
 
 1️⃣ Clone the Repository
 git clone <repository-url>
@@ -115,7 +117,7 @@ venv\Scripts\activate      # Windows
 3️⃣ Install Dependencies
 pip install -r requirements.txt
 
-##🗄️ Database Setup
+## 🗄️ Database Setup
 
 The project uses SQLite
 
@@ -144,7 +146,7 @@ Swagger UI:
 ReDoc:
 👉 http://127.0.0.1:8000/redoc
 
-##🔐 Authentication Flow
+## 🔐 Authentication Flow
 
 Register a user
 
@@ -176,7 +178,7 @@ GET	/notes/{id}	Retrieve a note
 PUT	/notes/{id}	Update a note
 DELETE	/notes/{id}	Delete a note
 
-##🐳 Docker Support
+## 🐳 Docker Support
 
 This project includes Docker support for easy setup and consistent execution.
 
@@ -232,11 +234,16 @@ SECRET_KEY=your_secret_key
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
 
-##🎯 Task Compliance
+## 🎯 Task Compliance
 
 ✔ CRUD operations implemented
+
 ✔ Tag support with many-to-many relationship
+
 ✔ JWT authentication implemented
+
 ✔ SQLAlchemy ORM usage
+
 ✔ Docker support included
+
 ✔ Clean code separation and documentation
